@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">DownloaderApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="notification_channel_id" translatable="false">down_channel</string>
+    <string name="notification_title">DownloaderApp</string>
+    <string name="status_channel_desc">Download status</string>
+    <string name="channel_name">Download Status</string>
+    <string name="download_failed_txt">Download failed: check link and try again.</string>
+    <string name="permission_title">Permission required</string>
+    <string name="require_explanation">You need to provide permission to save files. Touch "OK" and choose again. If you mark "Don't ask again" the permission can be granted in system settings.</string>
+    <string name="notification_down_complete_title">Download Complete</string>
+    <string name="btn_text">Download</string>
+    <string name="glide_txt">Glide: an image loading and caching library for Android focused on smooth scrolling</string>
+    <string name="udacity_txt">Udacity: starter project repo for C3</string>
+    <string name="retrofit_txt">Retrofit: a type-safe HTTP client for Android and the JVM</string>
+    <string name="edit_text_txt">Paste file url here.</string>
+    <string name="url_item_warning">Select one item to download or provide a valid url</string>
+    <string name="file_name_label">File Name: </string>
+</resources>
