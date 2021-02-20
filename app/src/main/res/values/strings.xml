@@ -17,4 +17,6 @@
     <string name="edit_text_txt">Paste file url here.</string>
     <string name="url_item_warning">Select one item to download or provide a valid url</string>
     <string name="file_name_label">File Name: </string>
+    <string name="download_status_label">Download Status</string>
+    <string name="ok_btn_txt">ok</string>
 </resources>
