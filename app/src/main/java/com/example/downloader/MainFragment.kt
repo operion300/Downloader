@@ -91,7 +91,7 @@ class MainFragment : Fragment() {
                     when (binding.radioGroup.checkedRadioButtonId) {
                         binding.radioBtn1.id -> viewModel.download("https://github.com/bumptech/glide")
                         binding.radioBtn2.id -> viewModel.download("https://github.com/udacity/nd940-c3-advanced-android-programming-project-starter")
-                        binding.radioBtn3.id -> viewModel.download("https://github.com/square/retrofit")
+                        binding.radioBtn3.id -> viewModel.download("https://github.com/square/retrofi")
                     }
                 } else {
                     //if no one radio button is checked, the download method is call passing edit field content

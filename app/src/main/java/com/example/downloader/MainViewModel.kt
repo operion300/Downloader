@@ -118,6 +118,7 @@ class MainViewModel(private val app: Application): ViewModel() {
                     when (status) {
                         DownloadManager.STATUS_FAILED -> {
                             _status.postValue(DownloadManager.STATUS_FAILED)
+                            alarm()
                             isDownloadFinished = true
                         }
                         /*

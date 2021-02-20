@@ -18,12 +18,22 @@ class Receiver: BroadcastReceiver() {
             if (cursor.moveToFirst()){
                 //get file title with cursor
                 val title = cursor.getString(cursor.getColumnIndex(DownloadManager.COLUMN_TITLE))
-
-                Utils.notificationManager(context).sendNotification(
-                    context.getString(R.string.notification_down_complete_title),
-                    title,
-                    context
-                )
+                val status = cursor.getInt(cursor.getColumnIndex(DownloadManager.COLUMN_STATUS))
+                if (status == DownloadManager.STATUS_SUCCESSFUL){
+                    Utils.notificationManager(context).sendNotification(
+                            context.getString(R.string.notification_down_complete_title),
+                            title,
+                            context.getString(R.string.success_txt),
+                            context
+                    )
+                }else if (status == DownloadManager.STATUS_FAILED){
+                    Utils.notificationManager(context).sendNotification(
+                            "Download Unsuccessful",
+                            title,
+                            context.getString(R.string.fail_txt),
+                            context
+                    )
+                }
             }
             cursor.close()
         }

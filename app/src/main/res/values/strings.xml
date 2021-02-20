@@ -9,7 +9,7 @@
     <string name="download_failed_txt">Download failed: check link and try again.</string>
     <string name="permission_title">Permission required</string>
     <string name="require_explanation">You need to provide permission to save files. Touch "OK" and choose again. If you mark "Don't ask again" the permission can be granted in system settings.</string>
-    <string name="notification_down_complete_title">Download Complete</string>
+    <string name="notification_down_complete_title">Download Complete Successfully</string>
     <string name="btn_text">Download</string>
     <string name="glide_txt">Glide: an image loading and caching library for Android focused on smooth scrolling</string>
     <string name="udacity_txt">Udacity: starter project repo for C3</string>
@@ -19,4 +19,6 @@
     <string name="file_name_label">File Name: </string>
     <string name="download_status_label">Download Status</string>
     <string name="ok_btn_txt">ok</string>
+    <string name="success_txt">Successful</string>
+    <string name="fail_txt">Fail</string>
 </resources>
