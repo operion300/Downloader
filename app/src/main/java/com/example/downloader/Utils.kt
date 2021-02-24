@@ -27,6 +27,11 @@ class Utils {
                     .setSmallIcon(R.drawable.ic_assistant_black_24dp)
                     .setPriority(NotificationCompat.PRIORITY_HIGH)
                     .setContentIntent(pendingIntent)
+                    .addAction(
+                        R.drawable.ic_assistant_black_24dp,
+                        "Check Status",
+                        pendingIntent
+                    )
 
 
 
