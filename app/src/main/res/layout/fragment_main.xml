@@ -72,7 +72,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/retrofit_txt" />
         </RadioGroup>
-
+        <!--
         <Button
             android:id="@+id/download_btn"
             style="@style/Widget.MaterialComponents.Button"
@@ -84,7 +84,24 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radio_group" />
-
+            -->
+        <com.example.downloader.CustomButton
+            android:id="@+id/custom_btn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:backgroundColor="@color/secondaryColor"
+            app:downloadingBackgroundColor="@color/purple_700"
+            app:circleColor="@color/yellow"
+            app:textColor="@color/white"
+            app:text="Download"
+            android:onClick="@{()-> xmlViewModel.btnClicked()}"
+            app:downloadText="In progress..."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radio_group" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

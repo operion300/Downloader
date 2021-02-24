@@ -93,10 +93,12 @@ class MainFragment : Fragment() {
                         binding.radioBtn2.id -> viewModel.download("https://github.com/udacity/nd940-c3-advanced-android-programming-project-starter")
                         binding.radioBtn3.id -> viewModel.download("https://github.com/square/retrofi")
                     }
+                    binding.customBtn.downloadStart()
                 } else {
                     //if no one radio button is checked, the download method is call passing edit field content
                     try {
                         viewModel.download(binding.textField.editText?.text.toString().trim())
+                        binding.customBtn.downloadStart()
                     } catch (e: IllegalArgumentException) {
                         requireActivity().runOnUiThread {
                             Toast.makeText(requireContext(), getString(R.string.url_item_warning), Toast.LENGTH_LONG).show()
@@ -116,6 +118,11 @@ class MainFragment : Fragment() {
         viewModel.status.observe(viewLifecycleOwner, { status ->
             if (status == DownloadManager.STATUS_FAILED) {
                 Toast.makeText(requireContext(), getString(R.string.download_failed_txt), Toast.LENGTH_SHORT).show()
+                binding.customBtn.downloadCompleted()
+            }
+
+            if(status == DownloadManager.STATUS_SUCCESSFUL){
+                binding.customBtn.downloadCompleted()
             }
         })
         //observer the permission to handle runtime permission request for API 28 or less
@@ -139,6 +146,10 @@ class MainFragment : Fragment() {
                     )
                 }
             }
+        })
+
+        viewModel.progress.observe(viewLifecycleOwner,{
+            sizeProgress = it
         })
         //create the channel
         createChannel(
@@ -168,6 +179,7 @@ class MainFragment : Fragment() {
     companion object{
         private const val PERMISSION_REQUEST_CODE = 10
         var itemDownloadedId: Long = 0
+        var sizeProgress: Int = 0
     }
 
 }

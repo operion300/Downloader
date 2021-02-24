@@ -55,6 +55,10 @@ class MainViewModel(private val app: Application): ViewModel() {
 
     private val alarmManager by lazy { app.getSystemService(Context.ALARM_SERVICE) as AlarmManager }
 
+    val progress:LiveData<Int>
+    get() = _progress
+    private val _progress = MutableLiveData<Int>()
+
     init {
         _downloadId.value = 0
         isDownloadFinished = false
@@ -121,20 +125,6 @@ class MainViewModel(private val app: Application): ViewModel() {
                             alarm()
                             isDownloadFinished = true
                         }
-                        /*
-                        DownloadManager.STATUS_RUNNING -> {
-
-
-                        builder.setContentText("Download Running...")
-                                .setContentTitle(downloadItemTitle)
-                            notificationManager.notify(NOTIFICATION_ID,builder.build())
-
-                            val totalSize = cursor.getLong(cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES))
-                            val sizeDownloaded = cursor.getLong(cursor.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR))
-                            Log.i("DownloadSize","$totalSize")
-                            Log.i("DownloadCurrentSize","$sizeDownloaded")
-                        }*/
-
                         DownloadManager.STATUS_SUCCESSFUL -> {
                             _status.postValue(DownloadManager.STATUS_SUCCESSFUL)
                             //the status successful is the trigger of alarm

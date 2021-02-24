@@ -15,4 +15,5 @@
     <color name="secondaryDarkColor">#00917b</color>
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#000000</color>
+    <color name="yellow">#F9A825</color>
 </resources>

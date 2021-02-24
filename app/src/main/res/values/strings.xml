@@ -21,4 +21,6 @@
     <string name="ok_btn_txt">ok</string>
     <string name="success_txt">Successful</string>
     <string name="fail_txt">Fail</string>
+    <string name="in_progress_txt">In progress</string>
+    <string name="complete_txt">Complete</string>
 </resources>
